@@ -1,5 +1,5 @@
 {
-  "name": "hyperf/hyperf-skeleton",
+  "name": "yhs/hyperf-scaffold",
   "type": "project",
   "keywords": [
     "php",
@@ -7,9 +7,10 @@
     "framework",
     "hyperf",
     "microservice",
-    "middleware"
+    "middleware",
+    "scaffold"
   ],
-  "description": "A coroutine framework that focuses on hyperspeed and flexible, specifically use for build microservices and middlewares.",
+  "description": "基于hyperf3.1版本框架的初始化项目脚手架",
   "license": "Apache-2.0",
   "require": {
     "php": ">=8.1",
