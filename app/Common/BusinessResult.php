@@ -23,7 +23,7 @@ class BusinessResult
     {
         $businessResult = new BusinessResponse();
 
-        return $businessResult->ok($data);
+        return $businessResult->ok($data)->toArray();
     }
 
     /**
@@ -36,7 +36,7 @@ class BusinessResult
     {
         $businessResult = new BusinessResponse();
 
-        return $businessResult->fail($baseObject->code, $baseObject->message);
+        return $businessResult->fail($baseObject->code, $baseObject->message)->toArray();
     }
 
     /**
@@ -51,6 +51,6 @@ class BusinessResult
     {
         $businessResult = new BusinessResponse();
 
-        return $businessResult->fail($code, $message, $data);
+        return $businessResult->fail($code, $message, $data)->toArray();
     }
 }

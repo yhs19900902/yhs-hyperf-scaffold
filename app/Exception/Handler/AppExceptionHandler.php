@@ -39,7 +39,7 @@ class AppExceptionHandler extends ExceptionHandler
         $this->logger->error($errorMsg);
 
         $businessResponse = new BusinessResponse();
-        return $response->withHeader('Content-type', CommonConstant::CONTENT_TYPE)->withStatus(500)->withBody(new SwooleStream(json_encode($businessResponse->fail(500, 'Internal Server Error.'), JSON_UNESCAPED_UNICODE)));
+        return $response->withHeader('Content-type', CommonConstant::CONTENT_TYPE)->withStatus(500)->withBody(new SwooleStream(json_encode($businessResponse->fail(50000, 'Internal Server Error.')->toArray(), JSON_UNESCAPED_UNICODE)));
     }
 
     public function isValid(Throwable $throwable): bool

@@ -25,7 +25,7 @@ class ValidationExceptionHandler extends ExceptionHandler
             $response = $response->addHeader('content-type', 'application/json; charset=utf-8');
         }
         $businessResponse = new BusinessResponse();
-        return $response->setStatus($throwable->status)->setBody(new SwooleStream(json_encode($businessResponse->fail($throwable->status, $body), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK | JSON_PARTIAL_OUTPUT_ON_ERROR | JSON_INVALID_UTF8_IGNORE)));
+        return $response->setStatus($throwable->status)->setBody(new SwooleStream(json_encode($businessResponse->fail($throwable->status, $body)->toArray(), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK | JSON_PARTIAL_OUTPUT_ON_ERROR | JSON_INVALID_UTF8_IGNORE)));
     }
 
     public function isValid(Throwable $throwable): bool

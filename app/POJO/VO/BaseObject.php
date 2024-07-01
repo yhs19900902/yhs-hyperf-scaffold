@@ -29,7 +29,7 @@ class BaseObject
      * @param mixed $data
      * @return array
      */
-    public function toArray(mixed $data): array
+    public function turnArray(mixed $data): array
     {
         // 对象转数组
         $array = json_decode(is_object($data) || is_array($data)

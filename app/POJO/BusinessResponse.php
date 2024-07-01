@@ -10,6 +10,7 @@ use Hyperf\ApiDocs\Annotation\ApiModelProperty;
 use Hyperf\ApiDocs\Annotation\ApiVariable;
 
 #[ApiModel(value: "响应参数")]
+#[Data]
 class BusinessResponse extends BaseObject
 {
     #[ApiModelProperty(value: "响应数据")]
@@ -41,14 +42,14 @@ class BusinessResponse extends BaseObject
      * 响应返回成功
      *
      * @param mixed $data 响应数据
-     * @return array
+     * @return BusinessResponse
      */
-    public function ok(mixed $data): array
+    public function ok(mixed $data): BusinessResponse
     {
         $this->code = $this->RESPONSE_OK;
         $this->message = 'success';
         $this->data = $data;
-        return $this->toArray($this);
+        return $this;
     }
 
     /**
@@ -57,29 +58,23 @@ class BusinessResponse extends BaseObject
      * @param int $code 响应编码
      * @param string $message 响应信息
      * @param mixed|null $data 响应数据
-     * @return array
+     * @return BusinessResponse
      */
-    public function fail(int $code = 50000, string $message = 'service exception', mixed $data = null): array
+    public function fail(int $code = 50000, string $message = 'service exception', mixed $data = null): BusinessResponse
     {
         $this->code = $code;
         $this->message = $message;
         $this->data = $data;
-        return $this->toArray($this);
+        return $this;
     }
 
     /**
-     * @return mixed
+     * 转数组
+     *
+     * @return array
      */
-    public function getData(): mixed
+    public function toArray(): array
     {
-        return $this->data;
-    }
-
-    /**
-     * @param mixed $data
-     */
-    public function setData(mixed $data): void
-    {
-        $this->data = $data;
+        return parent::turnArray($this);
     }
 }
