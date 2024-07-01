@@ -8,6 +8,7 @@ use App\POJO\VO\BaseObject;
 use Hyperf\ApiDocs\Annotation\ApiModel;
 use Hyperf\ApiDocs\Annotation\ApiModelProperty;
 use Hyperf\ApiDocs\Annotation\ApiVariable;
+use PhpAccessor\Attribute\Data;
 
 #[ApiModel(value: "响应参数")]
 #[Data]
