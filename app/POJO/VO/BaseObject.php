@@ -7,8 +7,10 @@ namespace App\POJO\VO;
 use Hyperf\ApiDocs\Annotation\ApiModelProperty;
 use Hyperf\DTO\Annotation\Dto;
 use Hyperf\DTO\Type\PhpType;
+use PhpAccessor\Attribute\Data;
 
 #[Dto]
+#[Data]
 class BaseObject
 {
     #[ApiModelProperty(value: "响应编码", example: 0, required: true, simpleType: PhpType::INT)]
@@ -48,37 +50,5 @@ class BaseObject
         };
 
         return json_decode(json_encode(array_filter($array, $filterFunc), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK | JSON_PARTIAL_OUTPUT_ON_ERROR | JSON_INVALID_UTF8_IGNORE), true);
-    }
-
-    /**
-     * @return int
-     */
-    public function getCode(): int
-    {
-        return $this->code;
-    }
-
-    /**
-     * @param int $code
-     */
-    public function setCode(int $code): void
-    {
-        $this->code = $code;
-    }
-
-    /**
-     * @return string
-     */
-    public function getMessage(): string
-    {
-        return $this->message;
-    }
-
-    /**
-     * @param string $message
-     */
-    public function setMessage(string $message): void
-    {
-        $this->message = $message;
     }
 }
