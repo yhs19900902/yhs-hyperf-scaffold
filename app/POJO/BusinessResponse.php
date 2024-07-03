@@ -78,4 +78,9 @@ class BusinessResponse extends BaseObject
     {
         return parent::turnArray($this);
     }
+
+    public function __toString(): string
+    {
+        return json_encode(parent::turnArray($this));
+    }
 }
