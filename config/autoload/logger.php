@@ -26,7 +26,7 @@ return [
         'formatter' => [
             'class' => Monolog\Formatter\LineFormatter::class,
             'constructor' => [
-                'format' => "%datetime% %level_name%\n\t\t[" . env('APP_NAME', 'skeleton') . ",%extra%]\n\t\t- %channel%\n\t\t%context% %message%\n",
+                'format' => "%datetime% %level_name%\n\t\t[" . env('APP_NAME', 'skeleton') . ",%extra%]\n\t\t- %channel%\n\t\t%message% %context%\n",
                 'dateFormat' => 'Y-m-d H:i:s.u',
                 'allowInlineLineBreaks' => true,
             ],
