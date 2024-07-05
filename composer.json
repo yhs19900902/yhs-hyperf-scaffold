@@ -18,13 +18,21 @@
     "hyperf/cache": "~3.1.0",
     "hyperf/command": "~3.1.0",
     "hyperf/config": "~3.1.0",
+    "hyperf/config-aliyun-acm": "*",
+    "hyperf/config-apollo": "*",
+    "hyperf/config-center": "*",
+    "hyperf/config-etcd": "*",
+    "hyperf/config-nacos": "*",
+    "hyperf/config-zookeeper": "*",
     "hyperf/constants": "~3.1.0",
     "hyperf/database": "~3.1.0",
     "hyperf/db-connection": "~3.1.0",
     "hyperf/engine": "^2.10",
     "hyperf/framework": "~3.1.0",
+    "hyperf/grpc": "3.1.*",
     "hyperf/guzzle": "~3.1.0",
     "hyperf/http-server": "~3.1.0",
+    "hyperf/http2-client": "3.1.*",
     "hyperf/json-rpc": "~3.1.0",
     "hyperf/logger": "~3.1.0",
     "hyperf/memory": "~3.1.0",
@@ -89,9 +97,9 @@
     "php-accessor": "@php vendor/bin/php-accessor generate"
   },
   "repositories": [
-	{
-		"type": "vcs",
-		"url": "https://github.com/yhs19900902/yhs-hyperf-scaffold.git"
-	}
+    {
+      "type": "vcs",
+      "url": "https://github.com/yhs19900902/yhs-hyperf-scaffold.git"
+    }
   ]
 }
