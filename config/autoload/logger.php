@@ -19,7 +19,8 @@ return [
         'handler' => [
             'class' => Monolog\Handler\RotatingFileHandler::class,
             'constructor' => [
-                'filename' => BASE_PATH . '/runtime/logs/' . env('APP_NAME', 'skeleton') . '.log',
+//                'filename' => BASE_PATH . '/runtime/logs/' . env('APP_NAME', 'skeleton') . '.log',
+                'filename' => '/data/runtime/logs/' . env('APP_NAME', 'skeleton') . '.log',
                 'level' => Monolog\Logger::DEBUG,
             ],
         ],
