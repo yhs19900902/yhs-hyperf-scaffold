@@ -30,14 +30,16 @@ return [
     | 生成swagger文件路径
     |--------------------------------------------------------------------------
     */
-    'output_dir' => BASE_PATH . '/runtime/swagger',
+//    'output_dir' => BASE_PATH . '/runtime/swagger',
+    'output_dir' => '/data/runtime/swagger',
 
     /*
     |--------------------------------------------------------------------------
     | 生成代理类路径
     |--------------------------------------------------------------------------
     */
-    'proxy_dir' => BASE_PATH . '/runtime/container/proxy',
+//    'proxy_dir' => BASE_PATH . '/runtime/container/proxy',
+    'proxy_dir' => '/data/runtime/container/proxy',
 
     /*
     |--------------------------------------------------------------------------
