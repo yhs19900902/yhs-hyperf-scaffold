@@ -23,14 +23,14 @@ class PageRequestVO implements JsonSerializable
     /**
      * @var int 页码
      */
-    #[Min(value: 0, message: '页码最小值 1 ！')]
+    #[Min(value: 0, messages: '页码最小值 1 ！')]
     #[Numeric]
     private int $pageNumber = 1;
 
     /**
      * @var int 每页的记录数
      */
-    #[Min(value: 1, message: '每页的记录数最小值 1 ！')]
+    #[Min(value: 1, messages: '每页的记录数最小值 1 ！')]
     #[Numeric]
     private int $pageSize = 10;
 
@@ -44,6 +44,6 @@ class PageRequestVO implements JsonSerializable
      * @var string|null 排序类型
      */
     #[Str]
-    #[In(value: ['ASC', 'DESC', 'asc', 'desc'], message: '排序类型错误 ！')]
+    #[In(value: ['ASC', 'DESC', 'asc', 'desc'], messages: '排序类型错误 ！')]
     private ?string $orderByType;
 }
