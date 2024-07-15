@@ -95,6 +95,7 @@ class CommonConstant
     public const STATUS_NORMAL = "0";
     public const CONTENT_TYPE = "application/json; charset=utf-8";
     public const GLOBALLY = "gl:";
+    public const AUTHORITY_KEY = "Authorization";
 
     private function __construct()
     {
