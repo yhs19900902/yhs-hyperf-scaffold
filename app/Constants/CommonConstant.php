@@ -7,6 +7,7 @@ namespace App\Constants;
 
 class CommonConstant
 {
+    public const NEGATIVE = -1;
     public const ZERO = 0;
     public const ONE = 1;
     public const TWO = 2;
