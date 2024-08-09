@@ -638,6 +638,47 @@ enum CallbackEnum
 
 ```
 
+# .env配置文件
+
+配置nacos配置中心的配置文件、数据库、redis
+
+```
+APP_NAME=<<项目名称记得修改>>
+# 开发环境 生产改成prod
+APP_ENV=dev
+SCAN_CACHEABLE=false
+# nacos配置中心
+CONFIG_CENTER_ENABLE=true
+CONFIG_CENTER_DRIVER=nacos
+NACOS_HOST=
+NACOS_PORT=
+NACOS_USER_NAME=nacos
+NACOS_PASSWORD=
+NACOS_CONFIG_NAMESPACE_ID=
+NACOS_CONFIG_DATA_ID=
+NACOS_CONFIG_GROUP=
+NACOS_CONFIG_FILE_TYPE=yaml
+NACOS_GRPC_ENABLE=false
+NACOS_HEARTBEAT=10
+# 数据库
+DB_DRIVER=mysql
+DB_HOST=
+DB_PORT=
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
+DB_CHARSET=utf8mb4
+DB_COLLATION=utf8mb4_general_ci
+DB_PREFIX=''
+DB_MAX_IDLE_TIME=60.0
+# redis缓存
+REDIS_HOST=
+REDIS_AUTH=
+REDIS_PORT=
+REDIS_DB=0
+REDIS_MAX_IDLE_TIME=60.0
+```
+
 # 框架的工具类
 
 在app\Utils目录下有部分写好的工具类
