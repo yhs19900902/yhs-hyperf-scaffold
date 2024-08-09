@@ -572,14 +572,14 @@ class LoginLogic
         $userLoginResponse->setExpire(LocalDateTime::timestampForSecond($expire)); // 模拟返回过期时间
 
         // 查数据库，同时将查询的数据返回给UserPO对象
-        $userList = UserModel::query()->get()->map(CallbackEnum::MODEL_NAP_CALLBACK->callback(UserPO::class));
+        $userList = UserModel::query()->get()->map(CallbackEnum::MODEL_MAP_CALLBACK->callback(UserPO::class));
         var_dump($userList);
 
         return BusinessResult::ok($userLoginResponse);
     }
 }
 ```
-**重点3：** *代码中``` UserModel::query()->get()->map(CallbackEnum::MODEL_NAP_CALLBACK->callback(UserPO::class)); ```查询数据库后得到的数据反射给UserPO对象，该写法中map查询是使用了枚举的callback来实现，枚举代码是*
+**重点3：** *代码中``` UserModel::query()->get()->map(CallbackEnum::MODEL_MAP_CALLBACK->callback(UserPO::class)); ```查询数据库后得到的数据反射给UserPO对象，该写法中map查询是使用了枚举的callback来实现，枚举代码是*
 
 ```
 <?php
@@ -592,14 +592,14 @@ use ReflectionClass;
 enum CallbackEnum
 {
     /**
-     * 数据库查询结果反射到对象  查询数据时使用map()操作,案例:Model::query()->get()->map(CallbackEnum::MODEL_NAP_CALLBACK->callback(OrderPO::class));
+     * 数据库查询结果反射到对象  查询数据时使用map()操作,案例:Model::query()->get()->map(CallbackEnum::MODEL_MAP_CALLBACK->callback(OrderPO::class));
      */
-    case MODEL_NAP_CALLBACK;
+    case MODEL_MAP_CALLBACK;
 
     public function callback(?string $className = null): callable
     {
         return match ($this) {
-            self::MODEL_NAP_CALLBACK => function ($value) use ($className) {
+            self::MODEL_MAP_CALLBACK => function ($value) use ($className) {
                 // 获取赋值的对象名
                 $className = $className ?? $value->className;
 
@@ -805,14 +805,14 @@ use ReflectionClass;
 enum CallbackEnum
 {
     /**
-     * 数据库查询结果反射到对象  查询数据时使用map()操作,案例:Model::query()->get()->map(CallbackEnum::MODEL_NAP_CALLBACK->callback(OrderPO::class));
+     * 数据库查询结果反射到对象  查询数据时使用map()操作,案例:Model::query()->get()->map(CallbackEnum::MODEL_MAP_CALLBACK->callback(OrderPO::class));
      */
-    case MODEL_NAP_CALLBACK;
+    case MODEL_MAP_CALLBACK;
 
     public function callback(?string $className = null): callable
     {
         return match ($this) {
-            self::MODEL_NAP_CALLBACK => function ($value) use ($className) {
+            self::MODEL_MAP_CALLBACK => function ($value) use ($className) {
                 // 获取赋值的对象名
                 $className = $className ?? $value->className;
 
@@ -1253,7 +1253,7 @@ class LoginLogic
         $userLoginResponse->setExpire(LocalDateTime::timestampForSecond($expire)); // 模拟返回过期时间
 
         // 查数据库，同时将查询的数据返回给UserPO对象
-        $userList = UserModel::query()->get()->map(CallbackEnum::MODEL_NAP_CALLBACK->callback(UserPO::class));
+        $userList = UserModel::query()->get()->map(CallbackEnum::MODEL_MAP_CALLBACK->callback(UserPO::class));
         var_dump($userList);
 
         return BusinessResult::ok($userLoginResponse);
