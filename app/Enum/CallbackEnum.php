@@ -8,14 +8,14 @@ use ReflectionClass;
 enum CallbackEnum
 {
     /**
-     * 数据库查询结果反射到对象  查询数据时使用map()操作,案例:Model::query()->get()->map(CallbackEnum::MODEL_NAP_CALLBACK->callback(OrderPO::class));
+     * 数据库查询结果反射到对象  查询数据时使用map()操作,案例:Model::query()->get()->map(CallbackEnum::MODEL_MAP_CALLBACK->callback(OrderPO::class));
      */
-    case MODEL_NAP_CALLBACK;
+    case MODEL_MAP_CALLBACK;
 
     public function callback(?string $className = null): callable
     {
         return match ($this) {
-            self::MODEL_NAP_CALLBACK => function ($value) use ($className) {
+            self::MODEL_MAP_CALLBACK => function ($value) use ($className) {
                 // 获取赋值的对象名
                 $className = $className ?? $value->className;
 
