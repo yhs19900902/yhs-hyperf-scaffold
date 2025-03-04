@@ -127,7 +127,7 @@ protected UserService $userService;
 
 ``` #[ApiResponse(returnType: new BusinessResponse(UserLoginResponseVO::class))] ``` 注解是swagger响应的返回对象参数，如返回的json是``` {"code":0, "message":"success", "data": [{"name":"小一", "age":12}, {"name":"小二", "age":10}]} ``` 那么写法可以``` #[ApiResponse(returnType: new BusinessResponse([UserResponse::class]))] ```
 
-**重点1：** *``` #[RequestBody] ```注解是获取json的请求体，然后序列化转对象的注解，所有的请求参数都与对接接收，不要用数组接收，这是规范。该注解参考与springboot中的``` @RequestBody ```的注解*
+**重点1：** *``` #[RequestBody] ```注解是获取json的请求体，然后序列化转对象的注解，所有的请求参数都与对象接收，不要用数组接收，这是规范。该注解参考与springboot中的``` @RequestBody ```的注解*
 
 ``` #[Valid] ```是校验参数的注解
 
